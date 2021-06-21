@@ -1,0 +1,13 @@
+<h1>it works</h1>
+<ul slyle="">
+  <% @letters.each do |letter| %>
+   <li><%= letter %></li>
+  <% end %>
+</ul>
+<br>
+<form action="/score" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+  <input type="text" name="word">
+  <input type="submit" value="Play!">
+</form>
